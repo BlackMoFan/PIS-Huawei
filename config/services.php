@@ -34,5 +34,9 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'google_maps' => [
+        // 'api_key' => env('GOOGLE_PLACES_API_KEY'),
+        'api_key' => 'AIzaSyD5-6BO3UGKj2JvT8g6vumHNBsQZFk7NMo',
+    ],
 
 ];

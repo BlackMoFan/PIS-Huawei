@@ -7,21 +7,38 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <link rel="icon" href="{!! asset('images/logo.svg') !!}"/>
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
+        <tallstackui:script />
+        @livewireStyles
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- <script src="//unpkg.com/alpinejs" defer></script> --}}
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+        {{-- Google API Key --}}
+        {{-- <script async
+            src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_PLACES_API_KEY') }}&loading=async&libraries=places&callback=initMap">
+        </script> --}}
+        {{-- <script async
+            src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.api_key') }}&libraries=places&callback=initMap">
+        </script> --}}
+
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             <livewire:layout.navigation />
+            {{-- <x-admin-navbar /> --}}
 
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
@@ -32,5 +49,6 @@
                 {{ $slot }}
             </main>
         </div>
+        @livewireScripts
     </body>
 </html>

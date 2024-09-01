@@ -16,6 +16,9 @@ Route::middleware('guest')->group(function () {
 
     Volt::route('reset-password/{token}', 'pages.auth.reset-password')
         ->name('password.reset');
+
+    Volt::route('help-submit', 'sections.public.help-submit')
+        ->name('help-submit');
 });
 
 Route::middleware('auth')->group(function () {
